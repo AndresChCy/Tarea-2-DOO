@@ -12,6 +12,7 @@ public abstract class Reunion {
     private Instant horaInicio;
     private Instant horaFin;
     private List<Asistencia> asistenciaList;
+    private List<Asistencia> retrasoList;
 
     public Reunion(Date fecha, Instant horaPrevista, Duration duracionPrevista, List<Empleado> invitados) {
         this.fecha = fecha;
@@ -66,4 +67,17 @@ public abstract class Reunion {
     public Instant getHoraFin() {
         return horaFin;
     }
+
+    public void llego(Empleado empleado){
+        try{
+            if(horaInicio.compareTo(Instant.now()) ){
+                Asistencia asistente = new Retraso(empleado);
+                retrasoList.add(asistente);
+            }
+        }catch (Exception e){
+            Asistencia asistente = new Asistencia(empleado);
+            asistenciaList.add(asistente);
+        }
+    }
+
 }
