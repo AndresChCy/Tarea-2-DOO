@@ -1,6 +1,7 @@
 package org.example;
 import java.time.Duration;
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -19,6 +20,8 @@ public abstract class Reunion {
         this.horaPrevista = horaPrevista;
         this.duracionPrevista = duracionPrevista;
         this.invitados = invitados;
+        asistenciaList = new ArrayList<Asistencia>();
+        retrasoList = new ArrayList<Asistencia>();
     }
 
     public Date getFecha() {
@@ -37,11 +40,13 @@ public abstract class Reunion {
         return asistenciaList;
     }
 
-    public obtenerAsistencias() {}
-    public obtenerAusencias() {}
-    public obtenerRetrasos() {}
-    public int obtenerTotalAsistencia() {}
-    public float obtenerPorcentajeAsistencia() {}
+    //public List obtenerAsistencias() {}
+   // public obtenerAusencias() {}
+    public List<Asistencia> obtenerRetrasos() {
+        return retrasoList;
+    }
+    //public int obtenerTotalAsistencia() {}
+    //public float obtenerPorcentajeAsistencia() {}
 
     public float calcularTiempoReal() {
         if ( horaInicio!=null && horaFin!=null ) {
@@ -70,7 +75,7 @@ public abstract class Reunion {
 
     public void llego(Empleado empleado){
         try{
-            if(horaInicio.compareTo(Instant.now()) ){
+            if(horaInicio.compareTo(Instant.now()) < 0 ){
                 Asistencia asistente = new Retraso(empleado);
                 retrasoList.add(asistente);
             }
