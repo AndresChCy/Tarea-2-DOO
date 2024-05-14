@@ -36,16 +36,17 @@ public abstract class Reunion {
         return duracionPrevista;
     }
 
-    public List<Asistencia> getAsistenciaList() {
+    public List<Asistencia> obtenerAsistencas() {
         return asistenciaList;
     }
 
-    //public List obtenerAsistencias() {}
    // public obtenerAusencias() {}
     public List<Asistencia> obtenerRetrasos() {
         return retrasoList;
     }
-    //public int obtenerTotalAsistencia() {}
+    public int obtenerTotalAsistencia() {
+        return retrasoList.size() + asistenciaList.size();
+    }
     //public float obtenerPorcentajeAsistencia() {}
 
     public float calcularTiempoReal() {

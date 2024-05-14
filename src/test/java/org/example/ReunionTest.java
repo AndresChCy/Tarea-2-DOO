@@ -27,7 +27,7 @@ class ReunionTest {
     @DisplayName("Test llego a tiempo")
     void TestLlegoBien() {
         reunion.llego(empleado);
-        List<Asistencia> asistentes= reunion.getAsistenciaList();
+        List<Asistencia> asistentes= reunion.obtenerAsistencas();
         assertEquals(asistentes.size(),1);
         }
     @Test
