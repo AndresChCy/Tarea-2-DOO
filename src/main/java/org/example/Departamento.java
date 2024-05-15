@@ -21,6 +21,10 @@ public class Departamento implements Invitable{
     public int obtenerCantidadEmpleados() {
         return empleados.size();
     }
+    // Método para obtener la lista de empleados del departamento
+    public ArrayList<Empleado> getEmpleados() {
+        return empleados;
+    }
     public void invitar() {
         System.out.println("Invitando al departamento " + nombre);for (Empleado empleado : empleados) {
             empleado.invitar();
