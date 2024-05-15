@@ -1,4 +1,6 @@
 package org.example;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Esta clase representa a un empleado con su respectiva información.
@@ -40,14 +42,24 @@ public class Empleado implements Invitable{
     /**
      * Invita al empleado a algo.
      */
-    public void invitar() {
+    /**
+     * Invita al empleado a algo.
+     *
+     * @return Una lista que contiene al empleado invitado.
+     */
+    @Override
+    public List<Invitable> invitar() {
+        List<Invitable> empleadoInvitado = new ArrayList<>();
+        empleadoInvitado.add(this);
         System.out.println("Invitando a " + nombre + " " + apellidos);
+        return empleadoInvitado;
     }
     /**
      * Devuelve una representación en forma de cadena de texto del empleado.
      *
      * @return Una cadena de texto que representa al empleado.
      */
+    @Override
     public String toString() {
         return "Empleado{ Nombre = " + nombre + ", Apellidos = " +
                 apellidos + ", Id = " + id + ", Correo = " + correo + "}\n";

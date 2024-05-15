@@ -1,5 +1,6 @@
 package org.example;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Esta clase representa a un departamento de una organización.
@@ -49,18 +50,27 @@ public class Departamento implements Invitable{
         return empleados;
     }
     /**
-     * Invita al departamento y a sus empleados.
+     * Invita a un empleado del departamento.
+     *
+     * @return Una lista que contiene al empleado invitado, o una lista vacía si no hay empleados.
      */
-    public void invitar() {
-        System.out.println("Invitando al departamento " + nombre);for (Empleado empleado : empleados) {
-            empleado.invitar();
+    @Override
+    public List<Invitable> invitar() {
+        List<Invitable> empleadosInvitados = new ArrayList<>();
+        if (!empleados.isEmpty()) {
+            for (Empleado empleado : empleados) {
+                System.out.println("Invitando a " + empleado.getNombre() + " " + empleado.getApellidos());
+                empleadosInvitados.add(empleado);
+            }
         }
+        return empleadosInvitados;
     }
     /**
      * Devuelve una representación en forma de cadena de texto del departamento.
      *
      * @return Una cadena de texto que representa al departamento.
      */
+    @Override
     public String toString() {
         return "Departamento{ Nombre = " + nombre + ", Empleados = " + empleados + "}\n";
     }
