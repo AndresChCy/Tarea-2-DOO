@@ -98,9 +98,12 @@ public abstract class Reunion {
     public float calcularTiempoReal() {
         if ( horaInicio!=null && horaFin!=null ) {
             Duration duracion = Duration.between(horaInicio,horaFin);
-            return duracion.toMillis()/1000.0000f; //Devolver tiempo en segundos
+            return duracion.toMillis()/1000.0f;
+        } else if (horaInicio!=null) {
+            Duration duracion = Duration.between(horaInicio,Instant.now());
+            return duracion.toMillis()/1000.0f;
         } else {
-            return 0.000f;
+            return 0.0f;
         }
     }
 
@@ -122,6 +125,10 @@ public abstract class Reunion {
     public void Finalizar() {
         if (horaFin!=null) {
             throw new RuntimeException("No se puede finalizar la Reunion dos veces.");
+        }
+
+        if (horaInicio==null) {
+            throw new RuntimeException("No se ha iniciado la Reunion.");
         }
         horaFin = Instant.now();
     }
