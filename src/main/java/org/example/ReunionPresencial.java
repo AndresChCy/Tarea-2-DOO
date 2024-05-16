@@ -18,6 +18,7 @@ public class ReunionPresencial extends Reunion {
      * @param duracionPrevista  La duración prevista de la reunión.
      * @param invitados         La lista de empleados invitados a la reunión.
      * @param sala              String de la sala.
+     * @param tema              El tipo de reunión.
      */
     public ReunionPresencial(Empleado organizador, Date fecha, Instant horaPrevista, Duration duracionPrevista, List<Invitable> invitados, String sala,tipoReunion tema) {
         super(organizador, fecha, horaPrevista, duracionPrevista, invitados,tema);

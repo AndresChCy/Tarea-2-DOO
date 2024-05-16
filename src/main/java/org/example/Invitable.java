@@ -1,6 +1,4 @@
 package org.example;
-
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -8,8 +6,8 @@ import java.util.List;
  */
 public interface Invitable {
     /**
-     * Método para invitar a la entidad.
+     * Invita a la entidad.
+     * @return Una lista que contiene a la entidad invitada.
      */
     List<Invitable> invitar();
-
 }

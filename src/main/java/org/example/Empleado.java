@@ -32,17 +32,26 @@ public class Empleado implements Invitable{
 
     // Métodos getters
 
-    public String getId() {
-        return id;
-    }
+    /**
+     * Obtiene los apellidos del empleado.
+     * @return Los apellidos del empleado.
+     */
     public String getApellidos() {
         return apellidos;
     }
+    /**
+     * Obtiene el nombre del empleado.
+     * @return El nombre del empleado.
+     */
     public String getNombre() {
         return nombre;
     }
-    public String getCorreo() {
-        return correo;
+    /**
+     * Obtiene el nombre del departamento al que pertenece el empleado.
+     * @return El nombre del departamento del empleado.
+     */
+    public String getDepartamento() {
+        return departamento.getNombre();
     }
 
     /**
@@ -65,7 +74,8 @@ public class Empleado implements Invitable{
     @Override
     public String toString() {
         return "Empleado{Nombre = " + nombre + ", Apellidos = " +
-                apellidos + ", Id = " + id + ", Correo = " + correo + "}\n";
+                apellidos + ", Id = " + id + ", Correo = " + correo
+                + ", Departamento = " + this.getDepartamento() + "}\n";
     }
 
 }

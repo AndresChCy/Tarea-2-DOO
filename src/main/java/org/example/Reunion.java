@@ -7,7 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Superclase abstracta que representa una reunión, la cual puede ser pogramada y realizada entre un grupo selecto de empleados.
+ * Superclase abstracta que representa una reunión, la cual puede ser programada y realizada entre un grupo selecto de empleados.
  */
 public abstract class Reunion {
     private Date fecha;
@@ -30,7 +30,7 @@ public abstract class Reunion {
      * @param horaPrevista      La hora prevista de inicio de la reunión.
      * @param duracionPrevista  La duración prevista de la reunión.
      * @param invitados         La lista de empleados invitados a la reunión.
-     *
+     * @param tema              El tipo de reunión a realizar.
      */
     public Reunion(Empleado organizador, Date fecha, Instant horaPrevista, Duration duracionPrevista, List<Invitable> invitados,tipoReunion tema) {
         this.organizador = organizador;
@@ -84,7 +84,10 @@ public abstract class Reunion {
         return asistenciaList;
     }
 
-
+    /**
+     * Obtiene la lista de personas ausentes en la reunión.
+     * @return La lista de personas ausentes en la reunión.
+     */
     public List<Invitable> obtenerAusencias() {
         return ausentes;
     }
@@ -105,6 +108,13 @@ public abstract class Reunion {
         return retrasoList.size() + asistenciaList.size();
     }
 
+    /**
+     * Calcula y devuelve el porcentaje de asistencia a la reunión.
+     * El porcentaje se calcula como el número total de asistencias (incluyendo asistencias y retrasos)
+     * dividido por el número total de personas que se esperaba que asistieran a la reunión.
+     *
+     * @return El porcentaje de asistencia a la reunión.
+     */
     public float obtenerPorcentajeAsistencia() {
         float asistencias = retrasoList.size() + asistenciaList.size();
         float todos = retrasoList.size() + asistenciaList.size() + ausentes.size();
@@ -216,6 +226,7 @@ public abstract class Reunion {
 
     /**
      * Metodo para generar un informe de la reunion como archivo txt
+     * @param nombre El nombre del archivo de informe.
      */
     public void hacerInforme(String nombre){
         Informe informe = new Informe(this,this.asistenciaList,this.retrasoList,this.listaNotas,nombre);

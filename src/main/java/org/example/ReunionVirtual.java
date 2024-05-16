@@ -18,6 +18,7 @@ public class ReunionVirtual extends Reunion {
      * @param duracionPrevista  La duración prevista de la reunión.
      * @param invitados         La lista de empleados invitados a la reunión.
      * @param enlace            String del enlace de la reunion.
+     * @param tema              El tipo de reunión.
      */
     public ReunionVirtual(Empleado organizador, Date fecha, Instant horaPrevista, Duration duracionPrevista, List<Invitable> invitados, String enlace,tipoReunion tema) {
         super(organizador, fecha, horaPrevista, duracionPrevista, invitados,tema);
