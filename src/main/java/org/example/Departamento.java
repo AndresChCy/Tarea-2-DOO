@@ -26,11 +26,15 @@ public class Departamento implements Invitable{
         return nombre;
     }
     /**
-     * Agrega un empleado al departamento.
+     * Agrega un nuevo empleado al departamento y establece automáticamente el departamento al que pertenece el empleado.
      *
-     * @param empleado El empleado a agregar.
+     * @param id        El ID del empleado.
+     * @param apellidos Los apellidos del empleado.
+     * @param nombre    El nombre del empleado.
+     * @param correo    El correo electrónico del empleado.
      */
-    public void addEmpleado(Empleado empleado) {
+    public void inscribirEmpleado(String id, String apellidos, String nombre, String correo) {
+        Empleado empleado = new Empleado(id, apellidos, nombre, correo, this);
         empleados.add(empleado);
     }
     /**
@@ -72,6 +76,16 @@ public class Departamento implements Invitable{
      */
     @Override
     public String toString() {
-        return "Departamento{ Nombre = " + nombre + ", Empleados = " + empleados + "}\n";
+        // Crear un StringBuilder para construir la cadena de texto
+        StringBuilder sb = new StringBuilder();
+        // Agregar el nombre del departamento a la cadena
+        sb.append("Departamento: ").append(nombre).append("\n");
+        // Agregar la lista de empleados del departamento a la cadena
+        sb.append("Empleados:\n");
+        for (Empleado empleado : empleados) {
+            sb.append("- ").append(empleado.getNombre()).append(" ").append(empleado.getApellidos()).append("\n");
+        }
+        // Devolver la cadena construida
+        return sb.toString();
     }
 }

@@ -10,6 +10,7 @@ public class Empleado implements Invitable{
     private String apellidos;
     private String nombre;
     private String correo;
+    private Departamento departamento;
     /**
      * Constructor de la clase Empleado.
      *
@@ -17,12 +18,14 @@ public class Empleado implements Invitable{
      * @param apellidos Los apellidos del empleado.
      * @param nombre    El nombre del empleado.
      * @param correo    El correo electrónico del empleado.
+     * @param departamento El departamento al que pertenece el empleado.
      */
-    public Empleado (String id, String apellidos, String nombre, String correo) {
+    public Empleado (String id, String apellidos, String nombre, String correo, Departamento departamento) {
         this.id = id;
         this.apellidos = apellidos;
         this.nombre = nombre;
         this.correo = correo;
+        this.departamento = departamento;
     }
 
     // Métodos getters
@@ -59,7 +62,7 @@ public class Empleado implements Invitable{
      */
     @Override
     public String toString() {
-        return "Empleado{ Nombre = " + nombre + ", Apellidos = " +
+        return "Empleado{Nombre = " + nombre + ", Apellidos = " +
                 apellidos + ", Id = " + id + ", Correo = " + correo + "}\n";
     }
 }
