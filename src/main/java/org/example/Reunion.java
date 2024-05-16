@@ -156,4 +156,18 @@ public abstract class Reunion {
             asistenciaList.add(asistente);
         }
     }
+
+    /**
+     * Método toString que devuelve la información de la clase.
+     * @return String con la información de la reunion.
+     */
+    @Override
+    public String toString() {
+        return "Reunion {" + "\n" + "Organizador = " + organizador + "\n" +
+                "Fecha = " + fecha + "\n" +
+                "Hora prevista = " + horaPrevista + "\n" +
+                "Duración prevista = " + duracionPrevista + "\n" +
+                "Hora de inicio = " + horaInicio + "\n" +
+                "Hora de fin = " + horaFin;
+    }
 }

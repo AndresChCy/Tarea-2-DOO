@@ -8,6 +8,7 @@ import java.util.List;
  * Subclase de Reunion que representa una reunion del tipo virtual.
  */
 public class ReunionVirtual extends Reunion {
+    private String enlace;
     /**
      * Método constructor de ReunionVirtual que hereda los valores de la superclase Reunion.
      * @param organizador       El empleado que organiza la reunión.
@@ -15,19 +16,20 @@ public class ReunionVirtual extends Reunion {
      * @param horaPrevista      La hora prevista de inicio de la reunión.
      * @param duracionPrevista  La duración prevista de la reunión.
      * @param invitados         La lista de empleados invitados a la reunión.
+     * @param enlace            String del enlace de la reunion.
      */
-    public ReunionVirtual(Empleado organizador, Date fecha, Instant horaPrevista, Duration duracionPrevista, List<Empleado> invitados) {
+    public ReunionVirtual(Empleado organizador, Date fecha, Instant horaPrevista, Duration duracionPrevista, List<Empleado> invitados, String enlace) {
         super(organizador, fecha, horaPrevista, duracionPrevista, invitados);
+        this.enlace = enlace;
     }
 
-    private String enlace;
-
     /**
-     * Método set que establece el enlace de la reunión.
-     * @param enlace  String del enlace de la reunion.
+     * Método toString que devuelve la información de la clase.
+     * @return String con la información heredada, más el enlace de la reunion.
      */
-    public void setEnlace(String enlace) {
-        this.enlace = enlace;
+    public String toString() {
+        return super.toString() + "\n"
+                + "Enlace = " + enlace + " }\n";
     }
 
     /**
