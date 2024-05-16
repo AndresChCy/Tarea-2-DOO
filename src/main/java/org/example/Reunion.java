@@ -18,7 +18,8 @@ public abstract class Reunion {
     private List<Asistencia> asistenciaList;
     private List<Asistencia> retrasoList;
     private Empleado organizador;
-
+    // Lista que almacena todas las Notas de la reunión
+    private static List<Nota> listaNotas = new ArrayList<>();
     /**
      * Método constructor de la clase Reunion que asigna la configuración a las variables anteriormente definidas.
      * @param organizador       El empleado que organiza la reunión.
@@ -169,5 +170,16 @@ public abstract class Reunion {
                 "Duración prevista = " + duracionPrevista + "\n" +
                 "Hora de inicio = " + horaInicio + "\n" +
                 "Hora de fin = " + horaFin;
+    }
+    /**
+     * Método para crear una nueva nota y almacenarla en la lista de notas.
+     *
+     * @param contenido El contenido de la nueva nota.
+     */
+    public void nuevaNota(String contenido) {
+        // Crear una nueva instancia de Nota con el contenido proporcionado
+        Nota nuevaNota = new Nota(contenido);
+        // Agregar esta nota a la lista de notas
+        listaNotas.add(nuevaNota);
     }
 }

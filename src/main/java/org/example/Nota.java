@@ -4,6 +4,7 @@ package org.example;
  * Esta clase representa una nota que contiene cierto contenido.
  */
 public class Nota{
+    // Contenido de la nota
     private String contenido;
     /**
      * Constructor de la clase Nota.
