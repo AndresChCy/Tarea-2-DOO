@@ -67,5 +67,5 @@ public class Empleado implements Invitable{
         return "Empleado{Nombre = " + nombre + ", Apellidos = " +
                 apellidos + ", Id = " + id + ", Correo = " + correo + "}\n";
     }
->>>>>>> main
+
 }
