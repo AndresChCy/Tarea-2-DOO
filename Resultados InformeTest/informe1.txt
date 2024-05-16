@@ -1,0 +1,31 @@
+----Datos de Reunion----
+Reunion {
+Organizador = Empleado{Nombre = Nombre2, Apellidos = Apellido3 Apellido4, Id = ID_2, Correo = correo2@correo.cl, Departamento = NombreDepa2}
+
+Fecha = Thu May 16 13:05:04 CLT 2024
+Hora prevista = 2024-05-16T17:05:04.922552100Z
+Duración total = 11.016 segundos
+Tipo de Reunion = OTROS
+ Hora de inicio = 2024-05-16T17:05:04.935038300Z
+Hora de fin = 2024-05-16T17:05:15.952017400Z
+Enlace = enlace }
+
+
+
+----Datos Asistentes----
+Empleado{Nombre = Nombre2, Apellidos = Apellido3 Apellido4, Id = ID_2, Correo = correo2@correo.cl, Departamento = NombreDepa2}
+
+
+
+----Datos Retrasos----
+Empleado{Nombre = Nombre1, Apellidos = Apellido1 Apellido2, Id = ID_1, Correo = correo1@correo.cl, Departamento = NombreDepa1}
+ hora de llegada: 2024-05-16T17:05:05.942480500Z
+
+
+----Notas----
+1.- Primera nota, primera reunion oficial del mandanato.
+
+2.- Segunda nota, el empleado no se ha presentado todavía.
+
+3.- Tercera nota, falsa alarma, ya llegó.
+
