@@ -19,9 +19,9 @@ class Informe {
      * @param Retrasos      Lista de personas que se atrasaron al llegar.
      * @param Notas         Lista de notas antes y durante de la reunion.
      */
-    public Informe(Reunion reunion, List<Asistencia> Asistentes, List<Asistencia> Retrasos, List<Nota> Notas){
+    public Informe(Reunion reunion, List<Asistencia> Asistentes, List<Asistencia> Retrasos, List<Nota> Notas,String nombre){
         try {
-            this.informe = new FileWriter("Informe.txt");
+            this.informe = new FileWriter(nombre+".txt");
             this.escritor = new PrintWriter(informe);
 
             escritor.println("----Datos de Reunion----");

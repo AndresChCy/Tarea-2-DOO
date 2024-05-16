@@ -25,7 +25,7 @@ class ReunionTest {
         Empleado = new Empleado("ID_4", "Apellido7 Apellido8", "Nombre4", "correo4@correo.cl", new Departamento("Imaginario"));
         List<Invitable> invitados = new ArrayList<Invitable>();
         invitados.add(Departamento);
-        Reunion = new ReunionVirtual(Empleado2, new Date(), Instant.now(), Duration.ZERO, invitados, "enlace");
+        Reunion = new ReunionVirtual(Empleado2, new Date(), Instant.now(), Duration.ZERO, invitados, "enlace", tipoReunion.OTROS);
     }
 
     @Test

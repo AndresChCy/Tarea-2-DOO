@@ -19,10 +19,10 @@ class InformeTest {
     void setUp() {
         Empleado = new Empleado("ID_1", "Apellido1 Apellido2", "Nombre1", "correo1@correo.cl", new Departamento("NombreDepa1"));
         Empleado2 = new Empleado("ID_2", "Apellido3 Apellido4", "Nombre2", "correo2@correo.cl", new Departamento("NombreDepa2"));
-        List<Empleado> invitados = new ArrayList<Empleado>();
+        List<Invitable> invitados = new ArrayList<Invitable>();
         invitados.add(Empleado);
         invitados.add(Empleado2);
-        Reunion = new ReunionVirtual(Empleado2, new Date(), Instant.now(), Duration.ZERO, invitados, "enlace");
+        Reunion = new ReunionVirtual(Empleado2, new Date(), Instant.now(), Duration.ZERO, invitados, "enlace",tipoReunion.OTROS);
         Reunion.nuevaNota("Primera nota, primera reunion oficial del mandanato.");
     }
 
@@ -37,6 +37,16 @@ class InformeTest {
         Reunion.nuevaNota("Tercera nota, falsa alarma, ya llegó.");
         Thread.sleep(10000);
         Reunion.Finalizar();
-        Informe informe = new Informe(Reunion, Reunion.obtenerAsistencas(), Reunion.obtenerRetrasos(), Reunion.getListaNotas());
+        Reunion.hacerInforme("informe1");
+    }
+    @Test
+    @DisplayName("Test informe pero la reunion no termina")
+    void InformeSinTerminarReunion() throws InterruptedException{
+        Reunion.llego(Empleado2);
+        Reunion.Iniciar();
+        Thread.sleep(1000);
+        Reunion.nuevaNota("Segunda nota, el empleado no se ha presentado todavía.");
+        Reunion.llego(Empleado);
+        Reunion.hacerInforme("informe2");
     }
 }

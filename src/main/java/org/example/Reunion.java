@@ -21,6 +21,7 @@ public abstract class Reunion {
     private List<Asistencia> retrasoList;
     private Empleado organizador;
     private List<Nota> listaNotas;
+    private tipoReunion tema;
 
     /**
      * Método constructor de la clase Reunion que asigna la configuración a las variables anteriormente definidas.
@@ -31,11 +32,12 @@ public abstract class Reunion {
      * @param invitados         La lista de empleados invitados a la reunión.
      *
      */
-    public Reunion(Empleado organizador, Date fecha, Instant horaPrevista, Duration duracionPrevista, List<Invitable> invitados) {
+    public Reunion(Empleado organizador, Date fecha, Instant horaPrevista, Duration duracionPrevista, List<Invitable> invitados,tipoReunion tema) {
         this.organizador = organizador;
         this.fecha = fecha;
         this.horaPrevista = horaPrevista;
         this.duracionPrevista = duracionPrevista;
+        this.tema = tema;
         listaNotas = new ArrayList<Nota>();
         asistenciaList = new ArrayList<Asistencia>();
         retrasoList = new ArrayList<Asistencia>();
@@ -195,7 +197,8 @@ public abstract class Reunion {
         return "Reunion {" + "\n" + "Organizador = " + organizador + "\n" +
                 "Fecha = " + fecha + "\n" +
                 "Hora prevista = " + horaPrevista + "\n" +
-                "Duración prevista = " + duracionPrevista + "\n" +
+                "Duración total = " + this.calcularTiempoReal() + " segundos\n" +
+                "Tipo de Reunion = " + this.tema + "\n " +
                 "Hora de inicio = " + horaInicio + "\n" +
                 "Hora de fin = " + horaFin;
     }
@@ -212,10 +215,9 @@ public abstract class Reunion {
     }
 
     /**
-     * Método get de lista de notas.
-     * @return Lista de notas de la reunion.
+     * Metodo para generar un informe de la reunion como archivo txt
      */
-    public List<Nota> getListaNotas() {
-        return listaNotas;
+    public void hacerInforme(String nombre){
+        Informe informe = new Informe(this,this.asistenciaList,this.retrasoList,this.listaNotas,nombre);
     }
 }
