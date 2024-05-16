@@ -18,8 +18,8 @@ public abstract class Reunion {
     private List<Asistencia> asistenciaList;
     private List<Asistencia> retrasoList;
     private Empleado organizador;
-    // Lista que almacena todas las Notas de la reunión
-    private static List<Nota> listaNotas = new ArrayList<>();
+    private List<Nota> listaNotas;
+
     /**
      * Método constructor de la clase Reunion que asigna la configuración a las variables anteriormente definidas.
      * @param organizador       El empleado que organiza la reunión.
@@ -35,6 +35,7 @@ public abstract class Reunion {
         this.horaPrevista = horaPrevista;
         this.duracionPrevista = duracionPrevista;
         this.invitados = invitados;
+        listaNotas = new ArrayList<Nota>();
         asistenciaList = new ArrayList<Asistencia>();
         retrasoList = new ArrayList<Asistencia>();
     }
@@ -188,5 +189,13 @@ public abstract class Reunion {
         Nota nuevaNota = new Nota(contenido);
         // Agregar esta nota a la lista de notas
         listaNotas.add(nuevaNota);
+    }
+
+    /**
+     * Método get de lista de notas.
+     * @return Lista de notas de la reunion.
+     */
+    public List<Nota> getListaNotas() {
+        return listaNotas;
     }
 }
