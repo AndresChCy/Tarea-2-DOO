@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 public class ReunionVirtual extends Reunion {
-    public ReunionVirtual(Date fecha, Instant horaPrevista, Duration duracionPrevista, List<Empleado> invitados) {
+    public ReunionVirtual(Date fecha, Instant horaPrevista, Duration duracionPrevista, List<Invitable> invitados) {
         super(fecha, horaPrevista, duracionPrevista, invitados);
     }
 

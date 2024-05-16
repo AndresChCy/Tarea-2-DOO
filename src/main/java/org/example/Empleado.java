@@ -1,10 +1,12 @@
 package org.example;
 
+import java.util.List;
+
 public class Empleado implements Invitable{
     private String id;
     private String apellidos;
     private String nombre;
     private String correo;
     public Empleado(){}
-    public void invitar() {}
+    public List<Invitable> invitar() {}
 }

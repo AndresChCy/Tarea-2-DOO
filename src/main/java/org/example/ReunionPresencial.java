@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 public class ReunionPresencial extends Reunion {
-    public ReunionPresencial(Date fecha, Instant horaPrevista, Duration duracionPrevista, List<Empleado> invitados) {
+    public ReunionPresencial(Date fecha, Instant horaPrevista, Duration duracionPrevista, List<Invitable> invitados) {
         super(fecha, horaPrevista, duracionPrevista, invitados);
     }
 

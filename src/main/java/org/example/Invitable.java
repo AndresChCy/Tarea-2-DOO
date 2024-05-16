@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.List;
+
 public interface Invitable {
-    public void invitar();
+    public List<Invitable> invitar();
 }
