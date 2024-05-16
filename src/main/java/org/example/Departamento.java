@@ -2,6 +2,7 @@ package org.example;
 import java.util.ArrayList;
 import java.util.List;
 
+
 /**
  * Esta clase representa a un departamento de una organización.
  */
@@ -88,4 +89,5 @@ public class Departamento implements Invitable{
         // Devolver la cadena construida
         return sb.toString();
     }
+
 }

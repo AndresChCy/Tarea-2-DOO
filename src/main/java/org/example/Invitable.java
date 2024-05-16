@@ -11,4 +11,5 @@ public interface Invitable {
      * Método para invitar a la entidad.
      */
     List<Invitable> invitar();
+
 }

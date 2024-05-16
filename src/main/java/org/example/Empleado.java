@@ -2,9 +2,11 @@ package org.example;
 import java.util.ArrayList;
 import java.util.List;
 
+
 /**
  * Esta clase representa a un empleado con su respectiva información.
  */
+
 public class Empleado implements Invitable{
     private String id;
     private String apellidos;
@@ -65,4 +67,5 @@ public class Empleado implements Invitable{
         return "Empleado{Nombre = " + nombre + ", Apellidos = " +
                 apellidos + ", Id = " + id + ", Correo = " + correo + "}\n";
     }
+
 }

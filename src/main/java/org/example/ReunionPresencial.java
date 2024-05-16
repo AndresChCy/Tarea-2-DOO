@@ -8,6 +8,7 @@ import java.util.List;
  * Subclase de Reunion que representa una reunion del tipo presencial.
  */
 public class ReunionPresencial extends Reunion {
+
     private String sala;
     /**
      * Método constructor de ReunionPresencial que hereda los valores de la superclase Reunion.
@@ -18,7 +19,7 @@ public class ReunionPresencial extends Reunion {
      * @param invitados         La lista de empleados invitados a la reunión.
      * @param sala              String de la sala.
      */
-    public ReunionPresencial(Empleado organizador, Date fecha, Instant horaPrevista, Duration duracionPrevista, List<Empleado> invitados, String sala) {
+    public ReunionPresencial(Empleado organizador, Date fecha, Instant horaPrevista, Duration duracionPrevista, List<Invitable> invitados, String sala) {
         super(organizador, fecha, horaPrevista, duracionPrevista, invitados);
         this.sala = sala;
     }
